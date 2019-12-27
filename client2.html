@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="socket.io.js"></script>
+    <head>
+<body>
+<div id="div1"></div>
+<script>
+    window.onload = init();
+    function init() {
+        var socket = io.connect('http://127.0.0.1:3002');
+        socket.on('conn', function(msg) {
+            document.getElementById('div1').innerHTML += msg + '<br>';
+        });
+    }
+</script>
+</body>
+</html>
